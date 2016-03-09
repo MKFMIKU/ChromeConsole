@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "ChromeConsole",
+	"version": "1.0",
+	"description": "Tools that help you to see the web console more easily",
+	"browser_action": {
+		"default_title": "ChromeConsole",
+		"default_icon": {
+			"38": "icon.png"
+		}
+		//"default_popup": "popup.html"
+	},
+	"permissions": [
+          "tabs"
+        ],
+    "background": {
+    	"scripts": ["js/background.js"]
+  	},
+	"content_scripts": [	
+		{
+			"matches": ["http://*/*","https://*/*"],
+			"js": ["js/screenlog.js","js/func.js"	]
+		}
+	]
+}
